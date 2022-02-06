@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Javascript Saat ve Karşılama</title>
+  <link rel="stylesheet" href="/css/bulma.css">
+  <style>
+    .hero {
+      padding: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <section class="hero is-dark is-fullheight">
+    <div class="hero-head">
+      <p class="title" id="karsilama"> </p>
+    </div>
+    <div class="hero-foot">
+      <p class="is-size-4" id="saat"></p>
+      <p class="subtitle">Kodluyoruz Frontend Web Development Patikası'nın
+        Javascript bölümü 1. Ödevindesiniz. / <a href="https://bulma.io/">Bulma: the modern
+          CSS framework that
+          just works.</a>
+      </p>
+    </div>
+  </section>
+
+  <script>
+    //İsim
+    let isim = prompt("İsminiz:");
+    document.getElementById("karsilama").innerText = `Hoşgeldiniz, ${isim}..`;
+    //Saat
+    setInterval(() => {
+      let time = new Date();
+      let saat = time.toLocaleString('tr-TR', {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+        hour: 'numeric',
+        minute: 'numeric',
+        second: 'numeric',
+        hour12: false
+      });
+      document.getElementById("saat").innerText = `${saat}`;
+    }, 500);
+  </script>
+
+</body>
+
+</html>
